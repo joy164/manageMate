@@ -1,0 +1,73 @@
+/*estilos generales para pagina base*/
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    /*fuente tipo arial para el cuerpo de la pagina*/
+    font-family: 'Roboto', sans-serif;    
+}
+
+body h1{
+    font-size: 26px;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #0098cb;
+    cursor: pointer;
+}
+
+nav a:hover{
+    color: #00c3ff;
+}
+
+#formulario{
+    padding: 10px 5px 5px 5px;
+    background-color: #ededed;
+    margin: calc(25% + 10px);
+    margin-top: 70px;
+    padding-top: 28px;
+    border-radius: 10px;
+}
+/*estilos generales para pagina cabecera de pagina*/
+header{
+    border-bottom: 2px solid #eee;
+    padding: 7px 0;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    /*fuente tipo times news roman para la cabezera de la pagina*/
+    font-family: 'Noto Serif SC', serif;   
+    font-size: 45px;
+}
+header a{
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+/*estilos especificos para registro.php e iniciar sesion*/
+input[type="text"], input[type="password"]{
+    outline: none;
+    padding: 20px;
+    display: block;
+    width: 300px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    margin: 20px auto;
+}
+input[type="submit"]{
+    padding: 10px;
+    color: #fff;
+    background: #0098cb;
+    width: 320px;
+    margin: 20px auto;
+    margin-top: 0;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    background: #00c3ff;
+}
