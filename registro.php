@@ -45,5 +45,8 @@
         </form>    
         <?php echo"$mensaje"?>
     </div>
+	<nav>
+		<a href="index.php">regresar</a>
+	</nav>
 </body>
 </html>
