@@ -1,20 +1,60 @@
+<?php
+  session_start();
+
+  require 'database.php';
+
+  if (isset($_SESSION['user_id'])) {
+    $records = $conn->prepare('SELECT id, email, password FROM users WHERE id = :id');
+    $records->bindParam(':id', $_SESSION['user_id']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+    $user = null;
+
+    if (count($results) > 0) {
+      $user = $results;
+    }
+  }
+?>
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="utils/css/style.css">
+<html>
+  <head>
+    <meta charset="utf-8">
     <title>ManageMate</title>
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="utils/css/style.css">
+  </head>
+  <body>
     <?php require 'partials/header.php' ?>
-    <h1>inicia sesion o registrate</h1>
-    <nav>
-        <a href="registro.php">registrate</a> o
-        <a href="iniciar_sesion.php">inicia sesion</a>
-    </nav>
-</body>
+
+    <?php if(!empty($user)): ?>
+      <div id = "titulo">
+        <br> bienvenido. <?= $user['email']; ?> iniciaste sesion
+      </div>
+      <br><nav><a href="/manageMate/cerrar_sesion.php">Logout</a></nav>      
+      <div id = "texto">
+        <br><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Placeat quae necessitatibus voluptate provident non expedita dicta odit fuga atque! <br>
+        Quidem autem quasi unde cum ipsam? Dolor doloribus in illo voluptatibus! </p>
+
+        <br><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+        Placeat quae necessitatibus voluptate provident non expedita dicta odit fuga atque! <br>
+        Quidem autem quasi unde cum ipsam? Dolor doloribus in illo voluptatibus! </p>
+      </div>
+    <?php else: ?>
+      <div id = "titulo">
+        <h1>Por favor inicia sesion o registrate</h1>
+      </div>
+      <nav>
+        <a href="iniciar_sesion.php">Inicia Sesion</a> o
+        <a href="registro.php">Registrate</a>
+      </nav>
+      <div id = "texto">
+      <br><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+      Placeat quae necessitatibus voluptate provident non expedita dicta odit fuga atque! <br>
+      Quidem autem quasi unde cum ipsam? Dolor doloribus in illo voluptatibus!</p>
+      </div>
+    <?php endif;?>
+  </body>
 </html>

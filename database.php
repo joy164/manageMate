@@ -1,9 +1,14 @@
 <?php
-    // PHP Data Objects(PDO) Sample Code:
-    $server = 'localhost';
-    $user = 'root';
-    $password = '';
-    $database = 'mangemate-database';
 
-    $conn = mysqli_connect($server, $user, $password, $database);
+$server = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'mangemate-database';
+
+try {
+  $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
+} catch (PDOException $e) {
+  die('error al conectarse: ' . $e->getMessage());
+}
+
 ?>
