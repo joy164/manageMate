@@ -4,7 +4,7 @@
   require 'database.php';
 
   if (isset($_SESSION['user_id'])) {
-    $records = $conn->prepare('SELECT id, email, password FROM users WHERE id = :id');
+    $records = $conn->prepare('SELECT id, name, id_rol FROM users WHERE id = :id');
     $records->bindParam(':id', $_SESSION['user_id']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
@@ -30,7 +30,12 @@
 
     <?php if(!empty($user)): ?>
       <div id = "titulo">
-        <br> bienvenido. <?= $user['email']; ?> iniciaste sesion
+        <br> bienvenido <?= $user['name']; ?> iniciaste sesion
+        <?php if($user['id_rol'] == '1'): ?>
+          eres vendedor
+        <?php else: ?>
+          eres comprador
+        <?php endif;?>      
       </div>
       <br><nav><a href="/manageMate/cerrar_sesion.php">Logout</a></nav>      
       <div id = "texto">
