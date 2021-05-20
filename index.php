@@ -31,21 +31,20 @@
     <?php if(!empty($user)): ?>
       <div id = "titulo">
         <br> bienvenido <?= $user['name']; ?> iniciaste sesion
-        <?php if($user['id_rol'] == '1'): ?>
-          eres vendedor
-        <?php else: ?>
-          eres comprador
-        <?php endif;?>      
       </div>
-      <br><nav><a href="/manageMate/cerrar_sesion.php">Logout</a></nav>      
+      <br><nav><a href="/manageMate/cerrar_sesion.php">Cerrar sesion</a></nav>      
       <div id = "texto">
-        <br><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
-        Placeat quae necessitatibus voluptate provident non expedita dicta odit fuga atque! <br>
-        Quidem autem quasi unde cum ipsam? Dolor doloribus in illo voluptatibus! </p>
-
-        <br><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
-        Placeat quae necessitatibus voluptate provident non expedita dicta odit fuga atque! <br>
-        Quidem autem quasi unde cum ipsam? Dolor doloribus in illo voluptatibus! </p>
+        <?php if($user['id_rol'] == '1'): ?>
+          <p>eres el administrador, los procesos que puedes hacer son:<br>
+            1. Modificar, agregar y eliminar productos del catalogo. <br>
+            2. Ver la lista de pedididos teniendo de los datos del cliente (nombre, correo, direccion<br>
+        <?php else: ?>
+            eres comprador, los procesos que puedes hacer son: <br>
+            1. buscar pruductos del catalogo de la tienda <br>
+            2. agregar productos al carrito siempre y cuando se este registrado <br>
+            3. registrarse en la plataforma <br>
+            4. solo ve los atributos de los productos (imagen, precio, nombre y disponibilidad) <br>
+        <?php endif;?>      
       </div>
     <?php else: ?>
       <div id = "titulo">
