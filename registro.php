@@ -1,9 +1,13 @@
 <?php
+  session_start();
+  
+  if(isset($_SESSION['id'])){
+    header('Location: /ManageMate/index.php');
+  }
 
   require 'database.php';
-
   $message = '';
-
+  
   if (!empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['lastname'])
       && !empty($_POST['address']) && !empty($_POST['password'])) {
     $sql = "INSERT INTO users (name, lastname, address, email, password, id_rol) VALUES (:name, :lastname, :address, :email, :password, '2')";
@@ -26,7 +30,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>SignUp</title>
+    <title>Registrar</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="utils/css/style.css">
   </head>
@@ -37,13 +41,13 @@
     <div id = "formulario">
       <h1>Registro</h1>
       <form action="/manageMate/registro.php" method="POST">
-        <input name="email" type="text" placeholder="Ingresa tu correo">
-        <input name="name" type="text" placeholder="Ingresa tu nombre">
-        <input name="lastname" type="text" placeholder="Ingresa tu apellido">
-        <input name="address" type="text" placeholder="Ingresa tu direccion">
-        <input name="password" type="password" placeholder="Ingresa tu contraseña">
+        <input name="email" REQUIRED type="text" placeholder="Ingresa tu correo">
+        <input name="name" REQUIRED type="text" placeholder="Ingresa tu nombre">
+        <input name="lastname" REQUIRED type="text" placeholder="Ingresa tu apellido">
+        <input name="address" REQUIRED type="text" placeholder="Ingresa tu direccion">
+        <input name="password" REQUIRED type="password" placeholder="Ingresa tu contraseña">
         <!--<input name="confirm_password" type="password" placeholder="Confirm Password">-->
-        <input type="submit" value="Submit">
+        <input type="submit" value="Registrar">
       </form>
       <?php if(!empty($message)):?>
           <p><?= $message ?></p>
