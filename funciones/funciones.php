@@ -4,19 +4,19 @@
     function validar_vendedor(){
         session_start();
         if(!isset($_SESSION["id"]) || $_SESSION["id_rol"] != '1'){
-            header("location: /manageMate/index.php");
+            header("location: /index.php");
         }
     }
     function validar_comprador(){
         session_start();
         if(!isset($_SESSION["id"]) || $_SESSION["id_rol"] != '2'){
-            header("location: /manageMate/index.php");
+            header("location: /index.php");
         }
     }
     function sesion_iniciada(){
         session_start();
         if(isset($_SESSION["id"])){
-            header("location: /manageMate/index.php");
+            header("location: /index.php");
         }
     }
     //consulta SQL de la tabla users
