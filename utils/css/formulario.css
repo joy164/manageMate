@@ -1,0 +1,42 @@
+/*formulario general*/
+div.form-formulario{
+    padding: 5px;
+    margin: 0 auto;
+    border-radius: 5px;
+    width: 30%;
+    background-color: #dfd8ce;
+}
+/*contenido de formulario*/
+div.form-contenido{
+    margin: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+form input[type="text"], input[type="password"]{
+    border: 0;
+    width: 90%;
+    padding: 10px;
+    margin: 5px;   
+}
+form input[type="submit"]{
+    border-radius: 5px;
+    color:#ffff;
+    background-color: #0084d1;
+    border: 0;
+    width: 70%;
+    padding: 10px;
+    margin: 20px;   
+}
+div.form-formulario a{
+    font-size: 20px;
+    color:#0084d1;
+    text-decoration: none;
+}
+/*hovers de botones*/
+div.form-formulario a:hover{
+    color:#4baee7;
+    cursor: pointer;
+}
+form input[type="submit"]:hover{
+    background-color: #4baee7;
+}

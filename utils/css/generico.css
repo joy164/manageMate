@@ -1,0 +1,36 @@
+body{
+    margin: 30px;
+}
+header.cabecera{
+    text-align: center;
+    width: 30%;
+    margin: 0 auto;
+}
+header a{
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+}
+nav.menu{
+    padding: 15px;
+    background-color: #dfd8ce;
+    text-align: center;
+    margin-bottom: 40px;
+}
+nav a{
+    padding: 10px;
+    /*background-color: #0084d1;*/
+    color: #000;
+    text-decoration: none;
+}
+nav a:hover{
+    background-color: #4baee7;
+}
+footer.pie_pagina{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+
+}

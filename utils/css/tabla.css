@@ -1,0 +1,29 @@
+
+table.table{
+    padding-top: 15px;
+    width: 100%;
+}
+th{
+    background-color: black;
+    text-align: center;
+    color:white;
+}
+tr.row{
+    background-color: #eee;
+}
+td{
+    text-align: center;
+}
+table a{
+    background-color: #0084d1;
+    padding: 7px;
+    margin-left: 7px;
+    margin-right: 7px;
+    border-radius: 2px;
+    color:black;
+    text-decoration: none;
+}
+table a:hover{
+    background-color:#4baee7;
+    cursor: pointer;
+}

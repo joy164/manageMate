@@ -1,60 +1,44 @@
-<?php
-  session_start();
-
-  require 'database.php';
-
-  if (isset($_SESSION['id'])) {
-  $records = $conn->prepare('SELECT id, name, id_rol FROM users WHERE id = :id');
-    $records->bindParam(':id', $_SESSION['id']);
-    $records->execute();
-    $results = $records->fetch(PDO::FETCH_ASSOC);
-
-    $user = null;
-
-    if (count($results) > 0) {
-      $user = $results;
-    }
-  }
+<?php 
+    include("procesos/validar_sesion.php");
 ?>
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>ManageMate</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="utils/css/style.css">
-  </head>
-  <body>
-    <?php require 'partials/header.php' ?>
-    <?php if(!empty($user)): ?>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/manageMate/utils/icons/icono.png">
+        <link rel="stylesheet" href="/manageMate/utils/css/generico.css">
+        <title>ManageMate</title>
+    </head>
 
-      <div id = "titulo">
-        <br> bienvenido <?= $user['name']; ?> iniciaste sesion
-      </div>
+    <body>
+        <?php 
+            //encabezado de pagina
+            include("partials/header.php"); 
+            //validamos si la variable usuario esta vacia
+            if(empty($usuario)){
+                //si esta vacia incluimos el menu generico
+                include("partials/menu_generico.php");
+            }else{
+                //si no evaluamos que tipo de usuario esta iniciando sesion
+                if($usuario["id_rol"] == '1'){
+                    //si es un vendedor le mostramos todas las funciones del vendedor
+                    include("partials/menu_vendedor.php");
+                }else{
+                    //si no le mostramos todas las funciones del cliente
+                    include("partials/menu_usuario.php");
+                }
+                
+            }
+            //buscador de articules, presente en ambas sesiones
+            include("partials/buscador.php"); 
+        ?>
 
-      <div id = "texto">
-        <?php if($user['id_rol'] == '1'): ?>
-          <?php require 'partials/menu_vendedor.php' ?>
-        <?php else: ?>
-          <?php require 'partials/menu_usuario.php' ?>
-        <?php endif;?>      
-      </div>
-    <?php else: ?>
-      
-      <div id = "titulo">
-        <h1>Por favor inicia sesion o registrate</h1>
-      </div>
-      
-      <nav>
-        <a href="iniciar_sesion.php">Inicia Sesion</a> o
-        <a href="registro.php">Registrate</a>
-      </nav>
-      <div id = "texto">
-      <br><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
-      Placeat quae necessitatibus voluptate provident non expedita dicta odit fuga atque! <br>
-      Quidem autem quasi unde cum ipsam? Dolor doloribus in illo voluptatibus!</p>
-      </div>
-    <?php endif;?>
-  </body>
+    </body>
+
+    <footer class="pie_pagina">
+        <p>ManageMate todos los derechos reservados &copy</p>
+    </footer>
 </html>
