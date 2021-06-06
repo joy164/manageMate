@@ -21,7 +21,7 @@
     }
     //consulta SQL de la tabla users
     function registrarCliente($conex, $nom, $apellido, $direc, $correo, $contraseña){
-        $sql = "INSERT INTO users(name, lastname, address, email, password, id_rol) 
+        $sql = "INSERT INTO users(name, LastName, address, email, password, id_rol) 
         values('$nom', '$apellido', '$direc', '$correo', '$contraseña', '2')";
         $consulta = $conex->query($sql);
         return $consulta;
