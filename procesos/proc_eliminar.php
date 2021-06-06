@@ -12,18 +12,18 @@ $id = $_REQUEST["id"];
         if(password_verify($_POST["contraseña"], $datos["password"])){
             if(eliminarProducto($id, $conex)){
                 $mensaje = "producto eliminado con exito";
-                header("location: ../manageMate/mostrar_productos.php?mens=$mensaje");
+                header("location: ../pantallas/mostrar_productos.php?mens=$mensaje");
             }else{
                 $mensaje = "error al eliminar producto";
-                header("location: ../manageMate/mostrar_productos.php?mens=$mensaje");
+                header("location: ../pantallas/mostrar_productos.php?mens=$mensaje");
             }
         }else{
             $mensaje = "contraseña incorrecta";
-            header("location: ../manageMate/mostrar_productos.php?mens=$mensaje");
+            header("location: ../pantallas/mostrar_productos.php?mens=$mensaje");
         }        
         
     }else if(isset($_POST["no_acepto"])){
-        header("location: ../manageMate/mostrar_productos.php");
+        header("location: ../pantallas/mostrar_productos.php");
     }
     
     

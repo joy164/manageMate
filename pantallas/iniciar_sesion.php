@@ -11,9 +11,9 @@ include("../funciones/funciones.php");
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="/manageMate/utils/icons/icono.png">
-        <link rel="stylesheet" href="/manageMate/utils/css/formulario.css">
-        <link rel="stylesheet" href="/manageMate/utils/css/generico.css">
+        <link rel="shortcut icon" href="/utils/icons/icono.png">
+        <link rel="stylesheet" href="/utils/css/formulario.css">
+        <link rel="stylesheet" href=/manageMate/utils/css/generico.css">
         <title>Iniciar Sesión</title>
     </head>
 
@@ -36,7 +36,7 @@ include("../funciones/funciones.php");
                 <?php if(isset($_REQUEST['mens'])):?>
                     <p><?=$_REQUEST['mens']?></p>
                 <?php endif;?>
-                <p>¿no tienes una cuenta?<a href="/manageMate/pantallas/registro.php"> Registrate </a></p>
+                <p>¿no tienes una cuenta?<a href="/pantallas/registro.php"> Registrate </a></p>
             </div>
         </div>
     </body>

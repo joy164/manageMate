@@ -11,9 +11,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="/manageMate/utils/icons/icono.png">
-        <link rel="stylesheet" href="/manageMate/utils/css/formulario.css">
-        <link rel="stylesheet" href="/manageMate/utils/css/generico.css">
+        <link rel="shortcut icon" href="/utils/icons/icono.png">
+        <link rel="stylesheet" href="/utils/css/formulario.css">
+        <link rel="stylesheet" href="/utils/css/generico.css">
         <title>Eliminar Producto</title>
     </head>
 

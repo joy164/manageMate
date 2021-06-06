@@ -10,9 +10,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="/manageMate/utils/icons/icono.png">
-        <link rel="stylesheet" href="/manageMate/utils/css/generico.css">
-        <link rel="stylesheet" href="/manageMate/utils/css/tabla.css">
+        <link rel="shortcut icon" href="/utils/icons/icono.png">
+        <link rel="stylesheet" href="/utils/css/generico.css">
+        <link rel="stylesheet" href="/utils/css/tabla.css">
         <title>ManageMate</title>
     </head>
 
@@ -48,8 +48,8 @@
                         <td><?=$producto["marca"]?></td>
                         <td><?=$producto["precio"]?></td>
                         <td><img height = "200px" src="data:img/jpg;base64, <?=base64_encode($producto["imagen"]); ?>"></td>
-                        <td><a href="/manageMate/pantallas/editarP.php?id=<?=$producto["id"]?>">Modificar</a></td>
-                        <td><a href="/manageMate/pantallas/eliminarP.php?id=<?=$producto["id"]?>">Eliminar</a></td>
+                        <td><a href="/pantallas/editarP.php?id=<?=$producto["id"]?>">Modificar</a></td>
+                        <td><a href="/pantallas/eliminarP.php?id=<?=$producto["id"]?>">Eliminar</a></td>
                     </tr>
                 <?php } ?>
             </tbody>

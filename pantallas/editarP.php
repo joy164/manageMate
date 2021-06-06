@@ -15,8 +15,8 @@ include_once("../database/conexion.php");
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/manageMateo/utils/icons/icono.png">
-        <link rel="stylesheet" href="/manageMate/utils/css/formulario.css">
-        <link rel="stylesheet" href="/manageMate/utils/css/generico.css">
+        <link rel="stylesheet" href="/utils/css/formulario.css">
+        <link rel="stylesheet" href="/utils/css/generico.css">
         <title>Actualizar Producto</title>
     </head>
 
