@@ -17,11 +17,11 @@ $mensaje="";
         if(actualizarProducto($id, $conex, $nom, $des, $marca, $precio, $foto)){
             //redirigimos a la pantalla de nuevo producto con el resultado del proceso 
             $mensaje="producto actualizado con exito";
-            header("location: ../manageMate/mostrar_productos.php?mens=$mensaje");
+            header("location: ../pantallas/mostrar_productos.php?mens=$mensaje");
         }else{
             //si no enviamos un mensaje de error 
             $mensaje="error al actualizar producto";
-            header("location: ../manageMate/mostrar_productos.php?mens=$mensaje");
+            header("location: ../pantallas/mostrar_productos.php?mens=$mensaje");
         }
     }
 
